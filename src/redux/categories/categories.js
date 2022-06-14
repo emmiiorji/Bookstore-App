@@ -1,12 +1,12 @@
 // Actions
 const Actions = {
-  CHECK_CATEGORY: 'bookstore/categories/CHECK',
+  CHECK: 'bookstore/categories/CHECK',
 };
 
 // Reducer
 const reducer = (state = [], action) => {
   switch (action.type) {
-    case Actions.CHECK_CATEGORY:
+    case Actions.CHECK:
       return 'Under Construction';
     default:
       return state;
@@ -14,6 +14,6 @@ const reducer = (state = [], action) => {
 };
 
 // Action Creators
-export const checkCategory = () => ({ type: Actions.CHECK_CATEGORY });
+export const checkCategory = () => ({ type: Actions.CHECK });
 
 export default reducer;
