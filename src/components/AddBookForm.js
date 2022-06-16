@@ -13,13 +13,22 @@ const AddBookForm = () => {
     category: '',
   });
 
+  const handleChange = (e) => {
+    const [name, value] = [e.target.name, e.target.value];
+    if (value.trim() === '') e.target.value = '';
+    setBook((prevBook) => ({
+      ...prevBook,
+      [name]: value.trim(),
+    }));
+  };
+
   return (
     <div className="addBookContainer">
       <h2>Add New Book</h2>
-      <form name="addBook" onSubmit={handleSubmit}>
-        <input type="text" name="title" placeholder="Book title" required />
-        <input type="text" name="author" placeholder="Book author" required />
-        <select name="category" className="inputs" required>
+      <form name="addBook" onSubmit={handleSubmit} id="addBook">
+        <input type="text" name="title" placeholder="Book title" required onChange={handleChange} />
+        <input type="text" name="author" placeholder="Book author" required onChange={handleChange} />
+        <select name="category" className="inputs" required onChange={handleChange}>
           <option value="" defaultValue>Category</option>
           <option value="Action">Action</option>
           <option value="Science Fiction">Science Fiction</option>
@@ -29,10 +38,6 @@ const AddBookForm = () => {
       </form>
     </div>
   );
-};
-
-AddBookForm.propTypes = {
-  handleSubmit: PropTypes.func.isRequired,
 };
 
 export default AddBookForm;
