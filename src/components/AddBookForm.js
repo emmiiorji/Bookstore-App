@@ -22,6 +22,11 @@ const AddBookForm = () => {
     }));
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(addBook({ ...book, id: uuidv4() }));
+    document.getElementById('addBook').reset();
+  };
   return (
     <div className="addBookContainer">
       <h2>Add New Book</h2>
