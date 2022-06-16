@@ -9,16 +9,16 @@ const Book = (props) => {
 
   return (
     <div className="bookContainer">
-      <div>
-        <p className="category">{category}</p>
-        <p className="title">{title}</p>
-        <p className="author">{author}</p>
-      </div>
-      <ul className="reactionsContainer">
-        <li className="reaction">Comments</li>
-        <li className="reaction">Remove</li>
-        <li className="reaction">Edit</li>
+      <ul>
+        <li className="category">{category}</li>
+        <li className="title">{title}</li>
+        <li className="author">{author}</li>
       </ul>
+      <div className="reactionsContainer">
+        <button type="button" className="reaction">Comments</button>
+        <button type="button" className="reaction">Remove</button>
+        <button type="button" className="reaction">Edit</button>
+      </div>
       <ShowProgress props={progress} />
     </div>
   );
