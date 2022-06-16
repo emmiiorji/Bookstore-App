@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from 'uuid';
+
 // Actions
 const Actions = {
   ADD: 'bookstore/book/ADD',
@@ -6,22 +8,25 @@ const Actions = {
 
 const stateInit = [
   {
-    id: 1,
+    id: uuidv4(),
     topic: 'Action',
     title: 'The Hunger Games',
     author: 'Suzanne Collins',
+    category: 'Action',
   },
   {
-    id: 2,
+    id: uuidv4(),
     topic: 'Science Fiction',
     title: 'Dune',
     author: 'Frank Herbert',
+    category: 'Economy',
   },
   {
-    id: 3,
+    id: uuidv4(),
     topic: 'Economy',
     title: 'Capital in the Twenty-First Century',
     author: 'Suzanne Collins',
+    category: 'Science Fiction',
   },
 ];
 
