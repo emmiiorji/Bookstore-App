@@ -1,12 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import ShowProgress from './ShowProgress';
+import { removeBook } from '../redux/books/books';
 
 const Book = (props) => {
   const {
-    category, title, author, progress,
+    category, title, author, id, progress,
   } = props;
 
+  const dispatch = useDispatch();
   return (
     <div className="bookContainer">
       <ul>
@@ -16,7 +19,7 @@ const Book = (props) => {
       </ul>
       <div className="reactionsContainer">
         <button type="button" className="reaction">Comments</button>
-        <button type="button" className="reaction">Remove</button>
+        <button type="button" className="reaction" onClick={() => dispatch(removeBook(id))}>Remove</button>
         <button type="button" className="reaction">Edit</button>
       </div>
       <ShowProgress props={progress} />
@@ -31,6 +34,7 @@ const progressShape = {
 };
 
 Book.propTypes = {
+  id: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
