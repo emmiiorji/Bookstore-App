@@ -5,6 +5,7 @@ import { bookURL, deleteBookURL } from '../../services/api';
 const Actions = {
   ADD: 'bookstore/book/ADD',
   REMOVE: 'bookstore/book/REMOVE',
+  LOAD: 'bookstore/book/LOAD',
 };
 
 const stateInit = [];
@@ -15,6 +16,8 @@ const reducer = (state = stateInit, action) => {
   switch (action.type) {
     case Actions.ADD:
       return [...state, payLoad.book];
+    case Actions.LOAD:
+      return [...payLoad];
     case Actions.REMOVE:
       return state.filter((book) => book.item_id !== payLoad.id);
     default:
@@ -23,6 +26,20 @@ const reducer = (state = stateInit, action) => {
 };
 
 // Action Creators
+export const loadBooks = () => async (dispatch) => {
+  const response = await axios.get(bookURL());
+  if (response.status === 200) {
+    const payLoad = Object.keys(response.data).map((key) => ({
+      item_id: key,
+      ...response.data[key][0],
+    }));
+
+    dispatch({
+      type: Actions.LOAD,
+      payLoad,
+    });
+  }
+};
 export const addBook = (book) => async (dispatch) => {
   try {
     const response = await axios.post(bookURL(), book);
