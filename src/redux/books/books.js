@@ -1,3 +1,6 @@
+import axios from 'axios';
+import { deleteBookURL } from '../../services/api';
+
 // Actions
 const Actions = {
   ADD: 'bookstore/book/ADD',
@@ -13,7 +16,7 @@ const reducer = (state = stateInit, action) => {
     case Actions.ADD:
       return [...state, payLoad.book];
     case Actions.REMOVE:
-      return state.filter((book) => book.id !== payLoad.id);
+      return state.filter((book) => book.item_id !== payLoad.id);
     default:
       return state;
   }
@@ -22,6 +25,19 @@ const reducer = (state = stateInit, action) => {
 // Action Creators
 export const addBook = (book) => ({ type: Actions.ADD, payLoad: { book } });
 
-export const removeBook = (id) => ({ type: Actions.REMOVE, payLoad: { id } });
+export const removeBook = (id) => async (dispatch) => {
+  try {
+    const response = await axios.delete(deleteBookURL(id));
+    if (response.status === 201) {
+      return dispatch({
+        type: Actions.REMOVE,
+        payLoad: { id },
+      });
+    }
+    throw new Error();
+  } catch (error) {
+    return 'Could not delete book';
+  }
+};
 
 export default reducer;
