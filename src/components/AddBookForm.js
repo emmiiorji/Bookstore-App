@@ -7,7 +7,7 @@ const AddBookForm = () => {
   const dispatch = useDispatch();
 
   const [book, setBook] = useState({
-    id: '',
+    item_id: '',
     title: '',
     author: '',
     category: '',
@@ -24,7 +24,7 @@ const AddBookForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addBook({ ...book, id: uuidv4() }));
+    dispatch(addBook({ ...book, item_id: uuidv4() }));
     document.getElementById('addBook').reset();
   };
   return (
