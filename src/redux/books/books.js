@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { deleteBookURL } from '../../services/api';
+import { bookURL, deleteBookURL } from '../../services/api';
 
 // Actions
 const Actions = {
@@ -23,7 +23,20 @@ const reducer = (state = stateInit, action) => {
 };
 
 // Action Creators
-export const addBook = (book) => ({ type: Actions.ADD, payLoad: { book } });
+export const addBook = (book) => async (dispatch) => {
+  try {
+    const response = await axios.post(bookURL(), book);
+    if (response.status === 201) {
+      return dispatch({
+        type: Actions.ADD,
+        payLoad: { book },
+      });
+    }
+    throw new Error();
+  } catch (error) {
+    return 'Could not save book';
+  }
+};
 
 export const removeBook = (id) => async (dispatch) => {
   try {
