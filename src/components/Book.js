@@ -1,39 +1,43 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ShowProgress from './ShowProgress';
+import { useDispatch } from 'react-redux';
+// import ShowProgress from './ShowProgress';
+import { removeBook } from '../redux/books/books';
 
 const Book = (props) => {
   const {
-    category, title, author, progress,
+    category, title, author, id,
   } = props;
 
+  const dispatch = useDispatch();
   return (
     <div className="bookContainer">
-      <div>
-        <p className="category">{category}</p>
-        <p className="title">{title}</p>
-        <p className="author">{author}</p>
-      </div>
-      <ul className="reactionsContainer">
-        <li className="reaction">Comments</li>
-        <li className="reaction">Remove</li>
-        <li className="reaction">Edit</li>
+      <ul>
+        <li className="category">{category}</li>
+        <li className="title">{title}</li>
+        <li className="author">{author}</li>
       </ul>
-      <ShowProgress props={progress} />
+      <div className="reactionsContainer">
+        <button type="button" className="reaction">Comments</button>
+        <button type="button" className="reaction" onClick={() => dispatch(removeBook(id))}>Remove</button>
+        <button type="button" className="reaction">Edit</button>
+      </div>
+      {/* <ShowProgress props={progress} /> */}
     </div>
   );
 };
 
-const progressShape = {
-  completedPercent: PropTypes.number,
-  currentChapter: PropTypes.string,
-  handleUpdateProgress: PropTypes.func,
-};
+// const progressShape = {
+//   completedPercent: PropTypes.number,
+//   currentChapter: PropTypes.string,
+//   handleUpdateProgress: PropTypes.func,
+// };
 
 Book.propTypes = {
+  id: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
-  progress: PropTypes.shape(progressShape).isRequired,
+  // progress: PropTypes.shape(progressShape).isRequired,
 };
 export default Book;
