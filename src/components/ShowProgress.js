@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+const handleUpdateProgress = () => {
+  //
+};
 const ShowProgress = ({ completedPercent, currentChapter, handleUpdateProgress }) => (
   <div className="showProgress">
     <div className="showCompleted">
@@ -15,10 +18,14 @@ const ShowProgress = ({ completedPercent, currentChapter, handleUpdateProgress }
   </div>
 );
 
+ShowProgress.defaultProps = {
+  handleUpdateProgress,
+};
+
 ShowProgress.propTypes = {
   completedPercent: PropTypes.number.isRequired,
   currentChapter: PropTypes.string.isRequired,
-  handleUpdateProgress: PropTypes.func.isRequired,
+  handleUpdateProgress: PropTypes.func,
 };
 
 export default ShowProgress;
