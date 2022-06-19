@@ -78,6 +78,34 @@ main {
   padding: 15px;
 }
 
+.category {
+  color: var(--light-black);
+}
+
+.title {
+  font-weight: 700;
+  font-size: 22px;
+  margin: 1px 0;
+}
+
+.author {
+  font-weight: 400;
+  color: #8cc1f0;
+}
+
+.reaction {
+  border: none;
+  background: none;
+  margin: 20px 10px 0 0;
+  color: var(--light-blue);
+  cursor: pointer;
+}
+
+.reaction.middle {
+  border-right: 2px solid var(--grey);
+  border-left: 2px solid var(--grey);
+  padding: 0 10px;
+}
 
 .showProgress {
   display: flex;
