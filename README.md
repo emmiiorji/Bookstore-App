@@ -2,6 +2,12 @@
 
 This is a Single Page App (SPA) developed with [React](https://reactjs.org/). It's a simple website developed that displays a list of books and allows you to add and remove books from that list.
 
+Below is a sample screenshot of the app:
+
+
+![image](https://user-images.githubusercontent.com/20554583/174462516-55a6fa0c-95e3-456e-bc82-2bf593aad4a0.png)
+
+
 ## Built With
 
 - HTML
