@@ -8,9 +8,9 @@ This is a Single Page App (SPA) developed with [React](https://reactjs.org/). It
 - CSS
 - React
 
-<!-- ## Live Demo
+## Live Demo
 
-[Live Demo Link](https://emmiiorji.github.io/bookstore-app/) -->
+Find live demo [here](https://your-bookstore-app.herokuapp.com/)
 
 
 ## Getting Started
