@@ -116,7 +116,7 @@ main {
 .addBookContainer select {
   padding: 10px;
   margin: 10px 10px 10px 0;
-} 
+}
 
 .addBookContainer h2 {
   color: var(--light-black);
@@ -168,6 +168,6 @@ main {
 
 .categoriesContainer .status {
   text-align: center;
-  font-family: "Montserrat",sans-serif;;
+  font-family: "Montserrat", sans-serif;
   color: var(--light-black);
 }
