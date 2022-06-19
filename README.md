@@ -10,9 +10,8 @@ Below is a sample screenshot of the app:
 
 ## Built With
 
-- HTML
-- CSS
-- React
+- HTML/CSS
+- React/Redux
 
 ## Live Demo
 
@@ -82,7 +81,7 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 - GitHub: [@emmiiorji](https://github.com/emmiiorji)
 - Twitter: [@emmiiorji](https://twitter.com/emmiiorji)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/emmanuel-orji-2a8317121)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/orji-emmanuel)
 
 
 
