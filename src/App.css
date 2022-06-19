@@ -156,3 +156,18 @@ main {
 .addBookContainer {
   padding: 15px;
 }
+
+.checkStatus {
+  margin: 20px;
+  background: #0290ff;
+  color: var(--white);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.categoriesContainer .status {
+  text-align: center;
+  font-family: "Montserrat",sans-serif;;
+  color: var(--light-black);
+}
