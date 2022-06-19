@@ -44,6 +44,15 @@ li {
   gap: 20px;
 }
 
+nav a {
+  margin-right: 20px;
+  color: black;
+}
+
+.active-link {
+  font-weight: bold;
+}
+
 .header {
   font-family: 'Montserrat', sans-serif;
   height: 80px;
