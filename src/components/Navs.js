@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Navs = () => {
   const navs = [
@@ -16,7 +16,7 @@ const Navs = () => {
 
   return (
     <nav className="nav">
-      {navs.map((nav) => <Link key={nav.id} to={nav.path}>{nav.text}</Link>)}
+      {navs.map((nav) => <NavLink className={(navlink) => (navlink.isActive ? 'active-link' : '')} key={nav.id} to={nav.path}>{nav.text}</NavLink>)}
     </nav>
   );
 };

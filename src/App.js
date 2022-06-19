@@ -6,13 +6,13 @@ import CategoriesPage from './components/pages/CategoriesPage';
 
 function App() {
   return (
-    <div>
+    <>
       <Header />
       <Routes>
         <Route path="/" element={<BooksPage />} />
         <Route path="categories" element={<CategoriesPage />} />
       </Routes>
-    </div>
+    </>
   );
 }
 

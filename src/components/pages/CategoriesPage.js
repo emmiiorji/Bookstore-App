@@ -7,11 +7,10 @@ const CategoriesPage = () => {
 
   const status = useSelector((state) => state.categories);
   return (
-    <div>
-      <h1>Categories</h1>
-      <button type="button" onClick={() => dispatch(checkCategory())}>Check status</button>
-      <p className="status">{status}</p>
-    </div>
+    <main className="categoriesContainer">
+      <button className="checkStatus" type="button" onClick={() => dispatch(checkCategory())}>Check status</button>
+      <h1 className="status">{status}</h1>
+    </main>
   );
 };
 

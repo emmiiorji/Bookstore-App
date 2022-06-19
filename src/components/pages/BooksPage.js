@@ -3,10 +3,14 @@ import AllBooks from '../AllBooks';
 import AddBookForm from '../AddBookForm';
 
 const BooksPage = () => (
-  <div>
+  <main>
     <AllBooks />
+    <hr style={{
+      border: 'none', height: '2px', background: '#f1f1f1', margin: '20px 0',
+    }}
+    />
     <AddBookForm />
-  </div>
+  </main>
 );
 
 export default BooksPage;
