@@ -77,3 +77,39 @@ main {
   border: 1px solid var(--grey);
   padding: 15px;
 }
+
+
+.showProgress {
+  display: flex;
+  align-items: center;
+}
+
+.showCompleted {
+  display: flex;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  gap: 10px;
+}
+
+.progress-btn,
+.add-btn {
+  padding: 10px 15px;
+  border: none;
+  background: #0290ff;
+  color: var(--white);
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+
+.showCurrentChapter {
+  font-weight: 300;
+}
+
+.currentChapter {
+  margin: 10px 0 13px 0;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
